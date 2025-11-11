@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My TMS — Home</title>
+
+  
+    <style>
+        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin:0; padding:0; }
+        header, main, footer { padding: 1rem; max-width: 1000px; margin: 0 auto; }
+        header { border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <header itemscope itemtype="https://schema.org/Organization">
+        <h1 itemprop="name">Your Company Name</h1>
+        <meta itemprop="url" content="https://example.com/">
+    </header>
+
+    <main>
+        <article itemscope itemtype="https://schema.org/SoftwareApplication">
+            <h2 itemprop="name">Your TMS</h2>
+            <p itemprop="description">Short description of the Transport Management System (TMS) — what it does and who it's for.</p>
+
+      
+            <section aria-labelledby="features">
+                <h3 id="features">Key features</h3>
+                <ul>
+                    <li>Route planning</li>
+                    <li>Load optimization</li>
+                    <li>Real-time tracking</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Your Company Name</p>
+    </footer>
+
+    <script>
+     
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
