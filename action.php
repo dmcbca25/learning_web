@@ -1,3 +1,21 @@
 <?php   
-echo "<pre>";
-print_r($_POST);
+
+    include 'db.php';
+
+   if (isset($_POST['btn_contact'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        $stmt = $conn->prepare("INSERT INTO contactForm (name, email, message) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
+
+        if ($stmt->execute()) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+        $conn->close();
+    }
