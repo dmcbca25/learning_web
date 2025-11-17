@@ -66,23 +66,29 @@
             const message = document.getElementById('message').value;
 
             if (name === "") {  
-                document.getElementById('namem').textContent = " Please enter your name.";
+                document.getElementById('namem').innerHTML = " Please enter your name.";
+             
                 valid = false; 
 
             }
             if (email === "") {
-                document.getElementById('emailm').textContent = " Please enter your email.";
+                document.getElementById('emailm').innerHTML = " Please enter your email.";
                 valid = false;  
             }
             if (message === "") {
-                document.getElementById('messsagem').textContent = " Please enter your message.";
+                document.getElementById('messsagem').innerHTML = " Please enter your message.";
+                valid = false;
+            }
+
+            if(message.length < 10 && message !== "") {
+                document.getElementById('messsagem').innerHTML = " Message should more than 10 characters.";
                 valid = false;
             }
 
             setTimeout(() => {
-                document.getElementById('namem').textContent = "";
-                document.getElementById('emailm').textContent = "";
-                document.getElementById('messsagem').textContent = "";
+                document.getElementById('namem').innerHTML = "";
+                document.getElementById('emailm').innerHTML = "";
+                document.getElementById('messsagem').innerHTML = "";
             }, 3000);
 
         
